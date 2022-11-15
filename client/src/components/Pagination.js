@@ -1,5 +1,5 @@
 import React from "react";
-import '../Pagination/Pagination.css';
+
 
 export default function Pagination({
   allDogs,

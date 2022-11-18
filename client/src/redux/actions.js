@@ -61,9 +61,9 @@ export function getTemperaments() {
 }
 
 export function createDog(payload) {
-  return async () => {
+  return async (dispatch) => {
     const postDog = await axios.get(
-      "http://localhost:3001/temperaments",
+      "http://localhost:3001/dogs",
       payload
     );
 

@@ -1,0 +1,29 @@
+.card-img{
+    width: 300px;
+    height: 250px;
+    border-radius: 70%;
+    border: 1px solid black;
+}
+
+.name-h{
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: auto;
+}
+
+.weight-h{
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: auto;
+    text-decoration: none;
+}
+
+.temp-h{
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+.cont-card{
+    text-align: center;
+}

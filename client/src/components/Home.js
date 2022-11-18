@@ -5,6 +5,8 @@ import SearchBar from './SearchBar';
 import Card from './Card';
 import { useDispatch, useSelector } from 'react-redux';
 import {Link} from 'react-router-dom';
+import './style/Home.css';
+import IconDog from '../assets/IconDog.png'
 
 export default function Home() {
 
@@ -61,8 +63,8 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <div>
+    <div className='cont1'>
+      <div className='cont2'>
         <div>
           <button className='btn-1' onClick={(e) => {handleClick(e)}}>
             Load Puppy's
@@ -82,9 +84,9 @@ export default function Home() {
         </div>
 
         {/*--------FILTRADO Y ORDEN----------*/}
-        <div>
+        <div className='filter'>
           <div>
-            <div>Filter by temperaments</div>
+            <div className='tit-filt'>Filter by temperaments</div>
             <select className='sbFilter' onChange={(e) => {handleFilterTempera(e)}}>
               <option value="All" default>All Temperaments</option>
               {temperaments.map((e) => (
@@ -96,7 +98,7 @@ export default function Home() {
           </div>
 
           <div>
-          <div>Filter by name</div>
+          <div className='tit-filt'>Filter by name</div>
             <select className="sbFilter" onChange={(e) => {handleSortAlf(e)}}>
               <option value="All" default>All</option>
               <option value="asc_name">Sort(A-Z)</option>
@@ -105,7 +107,7 @@ export default function Home() {
           </div>
 
           <div>
-            <div>Filter by Weight</div>
+            <div className='tit-filt'>Filter by Weight</div>
             <select className="sbFilter" onChange={(e) => {handleSortedWeight(e)}}>
               <option value="All" default>All</option>
               <option value="asc_weight">Sort(min-max)</option>
@@ -114,7 +116,7 @@ export default function Home() {
           </div>
 
           <div>
-            <div>Filter by Created/Existing</div>
+            <div className='tit-filt'>Created/Existing</div>
             <select className="sbFilter" onChange={(e) => {handleFilterPost(e)}}>
               <option value="All" default>All Dogs</option>
               <option value="Api">Puppy's in API</option>
@@ -123,25 +125,25 @@ export default function Home() {
           </div>
         </div>
 
-        <h2 className="title">Choose your puppy to pet</h2>
+        
 
         <div className="layout">
-        {result?.map((e) => {
+        { result?.map((e) => {
           return (
             <div key={e.id}>
-              <Link to={"/home/" + e.id}>
+              <Link to={"/home/" + e.id} className='link-card'>
                 <Card
                   key={e.id}
                   name={e.name}
                   image={e.image}
-                  temperaments={e.temperament || e.temperaments.map(e => e.name + ' | ')}
+                  temperament={e.temperament || e.temperaments.map(e => e.name + ' | ')}
                   weight={`${e.weightMin} - ${e.weightMax}`}
                 />
               </Link>
             </div>
           );
         })}
-        ;
+        
 
         
       </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import './style/Pagination.css'
 
 
 export default function Pagination({

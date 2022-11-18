@@ -1,0 +1,40 @@
+.landing-cont{
+    height: 100vh;
+    width: 100%;
+    object-fit: contain;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tit-landing{
+    display: block;
+    position: absolute;
+    top: 4em;
+    left: 0.5em ;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 70px;
+    text-shadow: 1px 0.1em 0.2em white
+}
+
+.landing-img{
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+}
+
+.btn-home{
+    display: block; 
+    position: absolute;
+    bottom: 2em;
+    left: 25%;
+    width: 150px;
+}
+
+.bnt-home:hover{
+    cursor: pointer;
+}

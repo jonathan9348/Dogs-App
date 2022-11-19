@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { filterTemp, getDogs, getTemperaments, orderAlf, filterDb } from '../redux/actions';
+import { filterTemp, getDogs, getTemperaments, orderAlf, filterDb, orderWeigth } from '../redux/actions';
 import Pagination from './Pagination';
 import SearchBar from './SearchBar';
 import Card from './Card';
 import { useDispatch, useSelector } from 'react-redux';
 import {Link} from 'react-router-dom';
 import './style/Home.css';
-import IconDog from '../assets/IconDog.png'
+
 
 export default function Home() {
 
@@ -23,7 +23,7 @@ export default function Home() {
 
   //-----------ORDENAMIENTO--------------//
   const [order, setOrder] = useState("");
-  const [orderWeigth, setOrderWeight] = useState("");
+  const [orWeigth, setOrWeight] = useState("");
 
   const setPagination = (page) => {
     return setActualPage(page);
@@ -53,13 +53,14 @@ export default function Home() {
   function handleSortAlf(e){
     e.preventDefault();
     dispatch(orderAlf(e.target.value))
+    
     setOrder(`Order ${e.target.value}`)
   };
 
   function handleSortedWeight(e){
     e.preventDefault();
     dispatch(orderWeigth(e.target.value))
-    setOrderWeight(`Order ${e.target.value}`)
+    setOrWeight(`Order ${e.target.value}`)
   };
 
   return (
@@ -136,7 +137,7 @@ export default function Home() {
                   key={e.id}
                   name={e.name}
                   image={e.image}
-                  temperament={e.temperament || e.temperaments.map(e => e.name + ' | ')}
+                  temperament={e.temperament || e.temperaments?.map(e => e.name + " ")}
                   weight={`${e.weightMin} - ${e.weightMax}`}
                 />
               </Link>

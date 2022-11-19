@@ -50,21 +50,21 @@ export default function rootReducer(state = initialState, action) {
       };
 
     case ORDER_ALF:
-      let alfOrder =
+      const sortName =
         action.payload === "asc_name"
-          ? state.dogs.sort((a, b) => {
+          ? state.dogs.sort(function (a, b) {
               if (a.name > b.name) return 1;
-              if (a.name < b.name) return -1;
+              if (b.name > a.name) return -1;
               return 0;
             })
-          : state.dogs.sort((a, b) => {
-              if (a.name < b.name) return 1;
+          : state.dogs.sort(function (a, b) {
               if (a.name > b.name) return -1;
+              if (b.name > a.name) return 1;
               return 0;
             });
       return {
         ...state,
-        dogs: alfOrder,
+        dogs: sortName,
       };
 
     case ORDER_WEIGTH:
@@ -86,25 +86,26 @@ export default function rootReducer(state = initialState, action) {
       };
 
     case FILTER_TEMP:
-      const allDogs = state.allDogs; //state.recipes
-      const typesFiltered =
-        action.payload === "All"
-          ? allDogs
-          : allDogs.filter(
-              (el) =>
-                el.temperaments.includes(action.payload) ||
-                el.temperaments.map((el) => el.name).includes(action.payload)
-            );
-      return {
-        ...state,
-        dogs: typesFiltered,
-      };
+      
+        const filtTemp = state.allDogs.filter((e) => {
+          if (typeof e.temperament === "string") {
+            return e.temperament.includes(action.payload);
+          }
+          if (Array.isArray(e.temperaments)) {
+            let temp = e.temperaments.map((e) => e.name);
+            return temp.includes(action.payload);
+          }
+        });
+        return {
+          ...state,
+          dogs: filtTemp,
+        };
 
     case FILTER_DB:
       const createdFilter =
         action.payload === "Created"
-          ? state.allDogs.filter((e) => e.createdInDb)
-          : state.allDogs.filter((e) => !e.createdInDb);
+          ? state.allDogs.filter((e) => e.createInDb)
+          : state.allDogs.filter((e) => !e.createInDb);
 
       return {
         ...state,

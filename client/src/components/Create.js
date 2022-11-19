@@ -20,7 +20,7 @@ export default function Create() {
     weightMax: "",
     heightMin: "",
     heightMax: "",
-    life_span: "",
+    lifeSpan: "",
     temperaments: [],
   });
 
@@ -28,28 +28,26 @@ export default function Create() {
     dispatch(getTemperaments());
   }, [dispatch]);
 
-  function changeInput(e) {
-    setDogs((dogs) => {
-      const newDogs = {
-        ...dogs,
-        [e.target.name]: e.target.value,
-      };
+  function changeInput(e){
+    setDogs({
+      ...dogs,
+      [e.target.name]: e.target.value,
+  });
 
-      const errors = validation(newDogs);
-      setErrors(errors);
-      return newDogs;
-    });
-  }
+  setErrors(
+    validation({
+      ...dogs,
+      [e.target.name]: e.target.value,
+    })
+  );
+}
 
   function handleSelect(e) {
-    if (dogs.temperaments.includes(e.target.value)) {
-      alert("The temperament already exists");
-    } else {
-      setDogs({
-        ...dogs,
-        temperaments: [...dogs.temperaments, e.target.value],
-      });
-    }
+    setDogs({
+      ...dogs, //traeme lo que ya habia y concatenale el e.target.value --> agrega al arreglo todo lo que vaya seleccionando
+      temperaments: Array.from(new Set([...dogs.temperaments, e.target.value])),
+    });
+    
   }
 
   function handleDelete(e) {
@@ -63,7 +61,6 @@ export default function Create() {
     e.preventDefault();
 
     dispatch(createDog(dogs));
-    e.target.reset();
     alert("Puppy created successfully");
 
     setDogs({

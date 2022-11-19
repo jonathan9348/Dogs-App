@@ -62,7 +62,7 @@ export function getTemperaments() {
 
 export function createDog(payload) {
   return async (dispatch) => {
-    const postDog = await axios.get(
+    const postDog = await axios.post(
       "http://localhost:3001/dogs",
       payload
     );
@@ -71,17 +71,17 @@ export function createDog(payload) {
   };
 }
 
-export function orderAlf(order) {
+export function orderAlf(payload) {
   return {
     type: ORDER_ALF,
-    payload: order,
+    payload
   };
 }
 
-export function orderWeigth(order) {
+export function orderWeigth(payload) {
   return {
     type: ORDER_WEIGTH,
-    payload: order,
+    payload
   };
 }
 

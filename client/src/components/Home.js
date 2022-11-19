@@ -80,6 +80,10 @@ export default function Home() {
           </Link>
         </div>
 
+        <div>
+          <h1 className='tit-page'>Hello! watch the dogs</h1>
+        </div>
+
         <div className='search'>
           <SearchBar/>
         </div>

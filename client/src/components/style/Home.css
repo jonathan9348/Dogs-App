@@ -4,6 +4,15 @@
 
 }
 
+.tit-page{
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: oblique;
+  font-size: 50px;
+  text-shadow: 0.5px 0.5px white;
+  color: midnightblue
+}
+
 .layout{
   display: grid;
   justify-content: space-between;

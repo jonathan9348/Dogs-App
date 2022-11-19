@@ -3,6 +3,7 @@ import { dogsDetails } from "../redux/actions";
 import { useParams, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
+
 export default function DogDetails() {
 
     const { id } = useParams();

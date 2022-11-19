@@ -1,0 +1,25 @@
+.container{
+    text-align: end;
+}
+
+.sbinput{
+    height: 30px;
+    font-size: 20px;
+    border-radius: 3%;
+    border: 1px solid tan;
+}
+
+.sbbtn{
+    height: 30px;
+    font-size: 15px;
+    border-radius: 3%;
+    margin-left: 2px;
+    border: 1px solid grey;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.sbbtn:hover{
+    cursor: pointer;
+    background-color: tan;
+    
+}

@@ -163,7 +163,8 @@ export default function Create() {
                 className="label-input"
                 type="text"
                 name="image"
-                value={dogs.image}
+                value={dogs.image }
+                placeholder="URL..."
                 onChange={(e) => changeInput(e)}
               />
             </div>

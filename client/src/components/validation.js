@@ -4,16 +4,16 @@ export default function validation(input) {
     if (input.name.length < 3) {
       errors.name = "The name is too short";
     }
-    if (!input.weightMin) {
+    else if (!input.weightMin) {
       errors.weightMin = "You need to put a minimum weight";
     }
-    if (!input.weightMax) {
+    else if (!input.weightMax) {
       errors.weightMax = "You need to put a maximum weight";
     }
-    if (!input.heightMin) {
+    else if (!input.heightMin) {
       errors.heightMin = "You need to put a minimum height";
     }
-    if (!input.heightMax) {
+    else if (!input.heightMax) {
       errors.heightMax = "You need to put a maximum height";
     }
   

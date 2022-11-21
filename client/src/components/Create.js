@@ -21,7 +21,7 @@ export default function Create() {
     heightMin: "",
     heightMax: "",
     lifeSpan: "",
-    temperaments: [],
+    temperament: [],
   });
 
   useEffect(() => {
@@ -45,7 +45,7 @@ export default function Create() {
   function handleSelect(e) {
     setDogs({
       ...dogs, //traeme lo que ya habia y concatenale el e.target.value --> agrega al arreglo todo lo que vaya seleccionando
-      temperaments: Array.from(new Set([...dogs.temperaments, e.target.value])),
+      temperament: Array.from(new Set([...dogs.temperament, e.target.value])),
     });
     
   }
@@ -53,7 +53,7 @@ export default function Create() {
   function handleDelete(e) {
     setDogs({
       ...dogs,
-      temperaments: dogs.temperaments.filter((d) => d !== e),
+      temperaments: dogs.temperament.filter((d) => d !== e),
     });
   }
 
@@ -71,7 +71,7 @@ export default function Create() {
       heightMin: "",
       heightMax: "",
       life_span: "",
-      temperaments: [],
+      temperament: [],
     });
 
     history.push("/home"); //histoy:navego en mi historial y con el push agrego el nombre de la ruta a donde se ubicara
@@ -173,7 +173,7 @@ export default function Create() {
             <label className="tit">-Temperaments-</label>
             <div className="tempdiv">
               <select className="label-input" onChange={(e) => handleSelect(e)}>
-                {temperaments.map((d) => (
+                {temperaments?.map((d) => ( //Reducer
                   <option value={d.name} key={d.id}>
                     {d.name}
                   </option>
@@ -181,7 +181,7 @@ export default function Create() {
               </select>
 
               <ul>
-                <li>{dogs.temperaments.map((e) => e + ", ")}</li>
+                <li>{dogs.temperament.map((e) => e)}</li> {/*estado inicial*/}
               </ul>
             </div>
           </div>

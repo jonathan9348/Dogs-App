@@ -14,7 +14,7 @@ export default function Card({
         <img src={image} alt="IMAGE NOT FOUND" className="card-img"/>
         <h1 className="name-h">{name}</h1>
         <h4 className="weight-h">Weight: {weight} kg</h4>
-        <h3 className="temp-h">{temperament}</h3>
+        <h3 className="temp-h">Temperaments: {temperament}</h3>
       </div>
     </div>
   );

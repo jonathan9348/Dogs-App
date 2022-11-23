@@ -56,7 +56,7 @@ export default function DogDetails() {
       
       <h4>
         Life Span: {" "}
-         {detailDog.createInDb ? `${detailDog.life_span} years` : detailDog.weightMax}
+         {detailDog.createInDb ? `${detailDog.lifeSpan} years` : `${detailDog.lifeSpan}`}
       </h4>
 
       </div>

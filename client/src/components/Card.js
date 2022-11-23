@@ -1,5 +1,4 @@
 import React from "react";
-
 import './style/Card.css'
 
 export default function Card({
@@ -9,13 +8,19 @@ export default function Card({
   weight
 }) {
   return (
-    <div className="cont-card">
-      <div className="card_style">
-        <img src={image} alt="IMAGE NOT FOUND" className="card-img"/>
-        <h1 className="name-h">{name}</h1>
-        <h4 className="weight-h">Weight: {weight} kg</h4>
-        <h3 className="temp-h">Temperaments: {temperament}</h3>
+    <div className="card">
+      <div className="face front">
+       <img src={image} alt="Image not found"/>
+       <h3>{name}</h3> 
       </div>
+      <div className="face back">
+        <h3>{name}</h3>
+        <p>This puppy has the following temperaments: {temperament}</p>
+        <p>The weight is about: {weight} kg</p>
+
+      </div>
+      
+      
     </div>
   );
 }

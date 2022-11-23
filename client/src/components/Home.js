@@ -65,28 +65,32 @@ export default function Home() {
 
   return (
     <div className='cont1'>
+      
       <div className='cont2'>
-        <div>
+    
+        <div className='btn-btn'>
+          
           <button className='btn-1' onClick={(e) => {handleClick(e)}}>
             Load Puppy's
           </button>
-        </div>
-        
-        <div>
-          <Link to = '/create'>
+          <Link to = '/create' >
             <button className='btn-1'>
               Create Puppy
             </button>
           </Link>
+          <div className='search'>
+          <SearchBar/>
         </div>
+        </div>
+        <hr/>
+        
 
         <div>
           <h1 className='tit-page'>Hello! watch the dogs</h1>
+          <hr/>
         </div>
 
-        <div className='search'>
-          <SearchBar/>
-        </div>
+        
 
         {/*--------FILTRADO Y ORDEN----------*/}
         <div className='filter'>
@@ -129,6 +133,7 @@ export default function Home() {
             </select>
           </div>
         </div>
+        <hr/>
 
         
 

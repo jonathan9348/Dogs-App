@@ -8,7 +8,7 @@ nav{
 
 .items {
 
-    background-color:midnightblue ;
+    background-color: rgb(14, 31, 124) ;
     border-radius: 50%;
     width: 40px;
     margin: 0.4rem;
@@ -19,10 +19,11 @@ nav{
     grid-row-start: 1;
     grid-row-end: 3;
     cursor: pointer;
+    box-shadow: 0 5px 10px black;
 }
 
 .items:hover{
-    background-color: cornflowerblue;
+    background-color:  rgb(86, 109, 235);
 }
 
 
@@ -33,7 +34,8 @@ nav{
 
 
 .active {
-    background-color:cornflowerblue;
+    background-color: rgb(159, 173, 255);
+    color: black;
     
 }
 

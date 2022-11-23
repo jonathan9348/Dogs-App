@@ -1,25 +1,35 @@
 .container{
-    text-align: end;
+    margin-left: 600px;
+    margin-top: 40px;
+    display:flex;
+  flex-direction:row;
+  
 }
 
 .sbinput{
     height: 30px;
     font-size: 20px;
     border-radius: 3%;
-    border: 1px solid tan;
+    border: 1px solid black;
+    box-shadow: 0 5px 10px black;
 }
 
 .sbbtn{
+    width: 150px;
     height: 30px;
     font-size: 15px;
     border-radius: 3%;
     margin-left: 2px;
     border: 1px solid grey;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-shadow: 0 5px 10px black;
+    background-color: rgb(14, 31, 124);
+    color: white;
+    border: 2px solid black;
 }
 
 .sbbtn:hover{
     cursor: pointer;
-    background-color: tan;
+    background-color: rgb(152, 159, 247);
     
 }
